@@ -2,6 +2,7 @@ package GrupoFingeso.ProyectoFingeso.Models;
 
 public class User {
 	
+	
 	public int id_user;
 	public String username;
 	/*Metodos Get y Set*/

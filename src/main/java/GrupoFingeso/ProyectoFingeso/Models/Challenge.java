@@ -1,6 +1,9 @@
 package GrupoFingeso.ProyectoFingeso.Models;
 
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Challenge {
 	private String topic;
