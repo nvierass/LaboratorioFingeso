@@ -1,4 +1,4 @@
-package GrupoFingeso.ProyectoFingeso.Controllers;
+package GrupoFingeso.ProyectoFingeso.controllers;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -12,14 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import GrupoFingeso.ProyectoFingeso.Models.*;
-
 @Controller
-public class PublicationController {
+public class UserController {
 
-	@GetMapping("/getIdea")
-	public void getIdea(int idIdea) {
-		Idea result = new Idea(idIdea);
-
-	}
 }

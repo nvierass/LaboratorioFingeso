@@ -1,4 +1,4 @@
-package GrupoFingeso.ProyectoFingeso.Controllers;
+package GrupoFingeso.ProyectoFingeso.controllers;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -13,6 +13,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class UserController {
+public class PrincipalController {
 
+	
+	@GetMapping("/testRoute")
+	public ModelAndView getHolamundo() {
+		ModelAndView mav = new ModelAndView();
+		String test = "hola mundo";
+		mav.addObject("message",test);
+		mav.setViewName("test");
+		return mav;
+	}
 }
