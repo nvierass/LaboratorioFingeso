@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Commentary {
 	
 	@Id
-	int id_commentary;
+	String id;
 	private String text;
 	private String owner_username;
 

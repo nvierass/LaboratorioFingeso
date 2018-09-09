@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "ideas")
 public class Idea {
 	@Id
-	int id_idea;
+	String id;
 	
 	private String name;
 	private String owner_username;

@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "challenges")
 public class Challenge {
 	@Id
-	int id_challenge;
+	String id;
 	
 	private String topic;
 	private String description;
@@ -19,11 +19,11 @@ public class Challenge {
 		this.description = description;
 	}
 	
-	public int getId() {
-		return this.id_challenge;
+	public String getId() {
+		return this.id;
 	}
-	public void setId(int id) {
-		this.id_challenge = id;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getTopic() {
 		return this.topic;

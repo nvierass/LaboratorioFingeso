@@ -8,5 +8,6 @@ import GrupoFingeso.ProyectoFingeso.models.User;
 @Repository
 public interface UserRepository extends MongoRepository<User, Long > {
 
-    public User findUsuarioById(String id);
+    public User findUserById(int id);
+    
 }

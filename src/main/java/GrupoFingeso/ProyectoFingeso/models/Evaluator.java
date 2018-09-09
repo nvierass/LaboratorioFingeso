@@ -7,15 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Evaluator{
-	
-	int id_evaluator;
+	@Id
+	String id;
 	public String username;
 
-	public int getID() {
-		return id_evaluator;
+	public String getID() {
+		return id;
 	}
-	public void setID(int id) {
-		id_evaluator = id;
+	public void setID(String id) {
+		this.id = id;
 	}
 	public String getUsername() {
 		return username;
