@@ -4,30 +4,31 @@ import GrupoFingeso.ProyectoFingeso.models.User;
 
 
 import GrupoFingeso.ProyectoFingeso.repositories.UserRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
 
-@Controller
+@RestController
+@RequestMapping(value = "/user")
 public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
 	//Index
-	@RequestMapping(value = "/user")
-	public String user(Model model) {
-		model.addAttribute("users",userRepository.findAll());
-		return "user";
+	@RequestMapping(method = RequestMethod.GET)
+	public List<User> index() {
+		return this.userRepository.findAll();
 	}
 	//Create
-	@RequestMapping(value = "/create")
-    public String create(Model model) {
-        return "create";
+	@RequestMapping(value = "/create-{username}",method = RequestMethod.POST)
+    public User create(@PathVariable String username) {
+		User user = new User(username);
+        return this.userRepository.save(user);
     }
 	//Store
 	@RequestMapping(value = "/save")

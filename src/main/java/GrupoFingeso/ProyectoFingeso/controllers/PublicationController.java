@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import GrupoFingeso.ProyectoFingeso.models.*;
 
-@Controller
+@RestController
 public class PublicationController {
 
 
