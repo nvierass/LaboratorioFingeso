@@ -3,7 +3,6 @@ package GrupoFingeso.ProyectoFingeso.models;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "commentaries")
@@ -14,13 +13,21 @@ public class Commentary {
 	private String text;
 	private String owner_username;
 
-	public Commentary(String owner,String com) {
+	public Commentary(String owner,String commentary) {
 		this.owner_username = owner;
-		this.text = com;
-		//this.created_at = new Date(****);
+		this.text = commentary;
 	}
 	
-	public void saveCommentary(){
-		//implementar almacenado en la bd
-		}
+	public String getText() {
+		return this.text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public String getOwner() {
+		return this.owner_username;
+	}
+	public void setOwner(String owner) {
+		this.owner_username = owner;
+	}
 }

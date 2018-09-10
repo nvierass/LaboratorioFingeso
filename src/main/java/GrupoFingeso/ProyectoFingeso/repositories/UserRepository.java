@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import GrupoFingeso.ProyectoFingeso.models.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, Long > {
+public interface UserRepository extends MongoRepository<User, String> {
 
-    public User findUserById(int id);
-    
-}
+    public User findUserById(String id);
+    //public User findUserByUsername(String username);
+} 
