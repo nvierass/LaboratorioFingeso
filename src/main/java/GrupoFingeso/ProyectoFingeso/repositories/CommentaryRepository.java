@@ -9,5 +9,5 @@ import GrupoFingeso.ProyectoFingeso.models.Commentary;
 public interface CommentaryRepository extends MongoRepository<Commentary, String>{
 	
 	public Commentary findCommentaryById(String id);
-	//public Commentary findCommentaryByOwner(String owner);
+	public Commentary findCommentaryByOwner(String owner);
 }

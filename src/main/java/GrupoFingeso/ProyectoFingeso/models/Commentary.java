@@ -1,7 +1,5 @@
 package GrupoFingeso.ProyectoFingeso.models;
 
-import java.util.List;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,11 +11,12 @@ public class Commentary {
 	private String text;
 	private String owner_username;
 
-	public Commentary(String owner,String commentary) {
-		this.owner_username = owner;
-		this.text = commentary;
+	public String getId() {
+		return this.id;
 	}
-	
+	public void setId(String id) {
+		this.id=id;
+	}
 	public String getText() {
 		return this.text;
 	}

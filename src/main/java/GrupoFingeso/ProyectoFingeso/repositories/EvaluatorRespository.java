@@ -9,5 +9,5 @@ import GrupoFingeso.ProyectoFingeso.models.Evaluator;
 public interface EvaluatorRespository extends MongoRepository<Evaluator, String>{
 	
 	public Evaluator findEvaluatorById(String id);
-    //public Evaluator findEvaluatorByUsername(String username);
+	public Evaluator findEvaluatorByUsername(String username);
 }

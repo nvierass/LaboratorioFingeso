@@ -1,8 +1,7 @@
 package GrupoFingeso.ProyectoFingeso.models;
 
 
-import java.util.List;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,21 +11,32 @@ public class Idea {
 	String id;
 	
 	private String name;
-	private String owner_username;
-	private String formulary_n;
-	private String formulary_a;
-	private String formulary_b;
-	private String formulary_c;
-	private Boolean formalized;
+	private String text;
+	private String owner;
+	private int positiveCount;
+	private int negativeCount;
 	private float evaluation;
+	private String topic;
 	
-	private int challengeId;
-	private String challengeRelated;
-	private Boolean categorized;
+	private ArrayList<Commentary> commentaries;
 	
-	public Idea(String name,String creator){
-		this.name=name;
-		this.owner_username = creator;
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id=id;
+	}
+	public int getPositiveCount() {
+		return this.positiveCount;
+	}
+	public void setPositiveCount(int positiveCount) {
+		this.positiveCount = positiveCount;
+	}
+	public int getNegativeCount() {
+		return this.negativeCount;
+	}
+	public void setNegativeCount(int negativeCount) {
+		this.positiveCount = negativeCount;
 	}
 	public String getName() {
 		return this.name;
@@ -34,35 +44,30 @@ public class Idea {
 	public void setName(String name) {
 		this.name=name;
 	}
+	public String getText() {
+		return this.text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public ArrayList<Commentary> getcommentaries(){
+		return this.commentaries;
+	}
+	public void addCommentary(Commentary com) {
+		this.commentaries.add(com);
+	}
+	public String getTopic() {
+		return this.topic;
+	}
+	public void setTopic(String topic) {
+		this.name=topic;
+	}
+	
 	public String getOwner() {
-		return this.owner_username;
+		return this.owner;
 	}
 	public void setOwner(String owner) {
-		this.owner_username = owner;
-	}
-	public String getN() {
-		return this.formulary_n;
-	}
-	public void setN(String n) {
-		this.formulary_n =n;
-	}
-	public String getA() {
-		return this.formulary_a;
-	}
-	public void setA(String a) {
-		this.formulary_a =a;
-	}
-	public String getB() {
-		return this.formulary_b;
-	}
-	public void setB(String b) {
-		this.formulary_b =b;
-	}
-	public String getC() {
-		return this.formulary_c;
-	}
-	public void setC(String c) {
-		this.formulary_c =c;
+		this.owner = owner;
 	}
 	public float getEvaluation() {
 		return this.evaluation;
@@ -70,30 +75,4 @@ public class Idea {
 	public void setEvaluation(float ev) {
 		this.evaluation = ev;
 	}
-	public Boolean getFormalized() {
-		return this.formalized;
-	}
-	public void setFormalized(Boolean b) {
-		this.formalized = b;
-	}
-	public Boolean getCategorized() {
-		return this.categorized;
-	}
-	public void setCategorized(Boolean c) {
-		this.categorized = c;
-	}
-	public String getChallenge() {
-		return this.challengeRelated;
-	}
-	public void setChallenge(String nameChallenge) {
-		this.challengeRelated = nameChallenge;
-	}
-	public int getChallengeId() {
-		return this.challengeId;
-	}
-	public void setChallengeId(int id) {
-		this.challengeId = id;
-	}
-	
-
 }

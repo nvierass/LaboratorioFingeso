@@ -1,7 +1,6 @@
 package GrupoFingeso.ProyectoFingeso.models;
 
-import java.util.List;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,12 +11,7 @@ public class Challenge {
 	
 	private String topic;
 	private String description;
-		
-	public Challenge(String topic,String description) {
-		this.topic = topic;
-		this.description = description;
-	}
-	
+			
 	public String getId() {
 		return this.id;
 	}

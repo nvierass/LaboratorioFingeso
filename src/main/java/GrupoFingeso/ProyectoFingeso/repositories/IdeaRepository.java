@@ -11,6 +11,7 @@ import GrupoFingeso.ProyectoFingeso.models.Idea;
 public interface IdeaRepository extends MongoRepository<Idea, String> {
 	
     public Idea findIdeaById(String id);
-    //public List<Idea> findIdeasChallenge(String challenge);
+    public List<Idea> findIdeaBytopic(String topic);
+    public List<Idea> findIdeaByOwner(String owner);
 }
 
